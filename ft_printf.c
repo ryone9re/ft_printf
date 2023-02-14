@@ -6,7 +6,7 @@
 /*   By: rkurimot <rkurimot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 23:29:07 by rkurimot          #+#    #+#             */
-/*   Updated: 2023/02/13 05:46:34 by rkurimot         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:50:45 by rkurimot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,10 @@ int	ft_printf(const char *format, ...)
 		else
 			i = write(1, cur++, 1);
 		if (i < 0)
+		{
+			va_end(ap);
 			return (-1);
+		}
 		ret += i;
 	}
 	va_end(ap);
